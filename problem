@@ -1,0 +1,9 @@
+1,如何知道字符的位置？
+    1、使用自定义返回值yyval
+    // you should define the return value in lexer here
+        %union {
+            float val;
+        }
+    2、查看
+        extern A_pos pos;
+        extern A_program root;

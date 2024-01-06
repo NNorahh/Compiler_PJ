@@ -1,0 +1,60 @@
+struct S {
+    a:int,
+    b:int
+}
+
+struct T {
+    a:int,
+    b[3]:int,
+    c:S,
+    d[3]:S
+}
+
+fn f(a1:int, a2[3]:int, a3:S, a4[3]:S)->int {
+    a1 = 11;
+    a2[1] = 22;
+    a3.b = 33;
+    a4[1].b = 44;
+    ret 666;
+}
+
+fn print(x1:T, x2:T)->int {
+    putint(x1.a);
+    putint(x1.b[1]);
+    putint(x1.c.b);
+    putint(x1.d[1].b);
+
+    putint(x2.a);
+    putint(x2.b[1]);
+    putint(x2.c.b);
+    putint(x2.d[1].b);
+    ret 4;
+}
+
+let p:T;
+
+fn main()->int {
+    let q:T;
+
+    p.a = 1;
+    p.b[1] = 2;
+    p.c.b = 3;
+    p.d[1].b = 4;
+
+    q.a = 5;
+    q.b[1] = 6;
+    q.c.b = 7;
+    q.d[1].b = 8;
+
+    print(p, q);
+
+    f(p.a, p.b, p.c, p.d);
+
+    print(p, q);
+
+    f(q.a, q.b, q.c, q.d);
+
+    print(p, q);
+
+    ret 0;
+}

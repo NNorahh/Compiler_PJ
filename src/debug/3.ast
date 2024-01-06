@@ -1,0 +1,18 @@
+A_program 
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDef 
+				|--A_varDefScalar a:
+				|--A_type int = 
+				|--A_rightVal 
+					|--A_arithExpr 
+						|--A_exprUnit 5;
+
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDef 
+				|--A_varDefScalar c:
+				|--A_type int = 
+				|--A_rightVal 
+					|--A_arithExpr 
+						|--A_exprUnit b;

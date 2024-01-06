@@ -1,0 +1,6 @@
+A_program 
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDef 
+				|--A_varDefArray b[10]:
+				|--A_type int = {};

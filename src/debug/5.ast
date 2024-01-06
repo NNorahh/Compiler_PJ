@@ -1,0 +1,22 @@
+A_program 
+	|--A_programElement 
+		|--A_structDef struct A {
+
+			|--A_varDecl 
+				|--A_varDeclScalar a:
+				|--A_type int,
+
+			|--A_varDecl 
+				|--A_varDeclScalar b:
+				|--A_type int,
+
+			|--A_varDecl 
+				|--A_varDeclScalar a:
+				|--A_type int
+}
+
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDecl 
+				|--A_varDeclScalar A:
+				|--A_type A;

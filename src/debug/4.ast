@@ -1,0 +1,12 @@
+A_program 
+	|--A_programElement 
+		|--A_structDef struct a {
+
+			|--A_varDecl 
+				|--A_varDeclScalar node:
+				|--A_type int,
+
+			|--A_varDecl 
+				|--A_varDeclScalar n:
+				|--A_type B
+}

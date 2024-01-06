@@ -1,0 +1,24 @@
+A_program 
+	|--A_programElement 
+		|--A_structDef struct A {
+
+			|--A_varDecl 
+				|--A_varDeclScalar a:
+				|--A_type int
+}
+
+	|--A_programElement 
+		|--A_structDef struct C {
+
+			|--A_varDecl 
+				|--A_varDeclScalar a:
+				|--A_type int
+}
+
+	|--A_programElement 
+		|--A_structDef struct B {
+
+			|--A_varDecl 
+				|--A_varDeclScalar A:
+				|--A_type A
+}

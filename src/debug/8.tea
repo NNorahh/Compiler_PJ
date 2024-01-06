@@ -1,0 +1,26 @@
+fn aa(a:int)->int;
+let a[10]:int  ={};
+struct A{
+    node:int
+}
+struct B{
+    node:A
+}
+struct C{
+    node:B
+}
+let kk:C;
+
+fn b()->int
+{
+    let c:int =aa(aa(aa(1)));
+    let cc:int = aa(c);
+    let cc1:int = aa(aa(c));
+    let cc2:int = aa(aa(aa(1)));
+    let bbb:B = kk.node;
+    let aaa:A = bbb.node;
+    let bb[10]:int = {aa(c),aa(aa(c)),aaa.node,aa(aaa.node)};
+}
+/*
+Typecheck passed!
+*/

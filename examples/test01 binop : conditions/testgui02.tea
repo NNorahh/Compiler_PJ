@@ -1,0 +1,46 @@
+struct T {
+    a:int,
+    b:int
+}
+
+let a1[3]:int;
+let a2[3]:T;
+
+fn foo(x1:int, x2:T)->int {
+    x1 = 1;
+    x2.b = 1;
+    ret 3;
+}
+
+fn foo2(x1[3]:int, x2[3]:T)->int {
+    x1[1] = 2;
+    x2[1].b = 3;
+    ret 5;
+}
+
+fn print(x1:int, x2:T)->int {
+    putint(x1);
+    putint(x2.b);
+    ret 4;
+}
+
+fn main()->int {
+    let b1[3]:int;
+    let b2[3]:T;
+    let t:int;
+
+    a1[1] = 5;
+    b1[1] = 6;
+    a2[1].b = 7;
+    b2[1].b = 8;
+
+    t = foo(a1[1], a2[1]);
+    t = foo(b1[1], b2[1]);
+    t = foo2(a1, a2);
+    t = foo2(b1, b2);
+
+    t = print(a1[1], a2[1]);
+    t = print(b1[1], b2[1]);
+
+    ret 0;
+}

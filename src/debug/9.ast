@@ -1,0 +1,86 @@
+A_program 
+	|--A_programElement 
+		|--A_fnDeclStmt 
+			|--A_fnDecl fn a(
+				|--A_paramDecl 
+					|--A_varDecl 
+						|--A_varDeclScalar a:
+						|--A_type int)->
+			|--A_type int;
+
+	|--A_programElement 
+		|--A_fnDef 
+			|--A_fnDecl fn main(
+				|--A_paramDecl )->
+			|--A_type int{
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar b:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall a(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_fnCall main());
+
+			|--A_codeBlockStmt 
+				|--A_ifStmt if(
+					|--A_boolExpr 
+						|--A_boolBiOpExpr 
+							|--A_boolExpr 
+								|--A_boolUnit (
+									|--A_comExpr 
+										|--A_exprUnit 
+											|--A_fnCall main()<=
+										|--A_exprUnit b)&&
+							|--A_boolExpr 
+								|--A_boolUnit (
+									|--A_comExpr 
+										|--A_exprUnit b==
+										|--A_exprUnit c)){
+
+					|--A_codeBlockStmt 
+						|--A_whileStmt while(
+							|--A_boolExpr 
+								|--A_boolUnit (
+									|--A_comExpr 
+										|--A_exprUnit (
+											|--A_arithExpr 
+												|--A_arithBiOpExpr 
+													|--A_arithExpr 
+														|--A_exprUnit b+
+													|--A_arithExpr 
+														|--A_exprUnit 
+															|--A_fnCall a(
+															|--A_rightVal 
+																|--A_arithExpr 
+																	|--A_exprUnit b))==
+										|--A_exprUnit b)){
+}
+}
+
+			|--A_codeBlockStmt 
+				|--A_returnStmt ret 
+				|--A_rightVal 
+					|--A_arithExpr 
+						|--A_arithBiOpExpr 
+							|--A_arithExpr 
+								|--A_arithBiOpExpr 
+									|--A_arithExpr 
+										|--A_exprUnit 
+											|--A_fnCall main()+
+									|--A_arithExpr 
+										|--A_exprUnit 
+											|--A_fnCall a(
+											|--A_rightVal 
+												|--A_arithExpr 
+													|--A_exprUnit 
+														|--A_fnCall main())-
+							|--A_arithExpr 
+								|--A_exprUnit b;
+}

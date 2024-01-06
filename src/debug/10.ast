@@ -1,0 +1,17 @@
+A_program 
+	|--A_programElement 
+		|--A_fnDef 
+			|--A_fnDecl fn main(
+				|--A_paramDecl )->
+			|--A_type int{
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDecl 
+						|--A_varDeclScalar a:
+						|--A_type int;
+
+			|--A_codeBlockStmt 
+				|--A_callStmt 
+					|--A_fnCall a();
+}

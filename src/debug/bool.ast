@@ -1,0 +1,42 @@
+A_program 
+	|--A_programElement 
+		|--A_fnDef 
+			|--A_fnDecl fn foo(
+				|--A_paramDecl 
+					|--A_varDecl 
+						|--A_varDeclScalar a:
+						|--A_type int)->
+			|--A_type int{
+
+			|--A_codeBlockStmt 
+				|--A_ifStmt if(
+					|--A_boolExpr 
+						|--A_boolUnit (
+							|--A_boolExpr 
+								|--A_boolUnit (
+									|--A_boolExpr 
+										|--A_boolUnit (
+											|--A_comExpr 
+												|--A_exprUnit a==
+												|--A_exprUnit 1)))){
+}else{
+
+					|--A_codeBlockStmt 
+						|--A_varDeclStmt let 
+							|--A_varDef 
+								|--A_varDefScalar c:
+								|--A_type int = 
+								|--A_rightVal 
+									|--A_arithExpr 
+										|--A_exprUnit 10;
+}
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar c:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 10;
+}

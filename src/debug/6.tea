@@ -1,0 +1,10 @@
+struct A{
+    a:int
+}
+let A:A;
+struct B{
+    A:A
+}
+/*
+Typecheck error in line 4, col 1: a struct have the same id have been defined
+*/

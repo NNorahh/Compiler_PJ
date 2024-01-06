@@ -1,0 +1,109 @@
+
+// Merge two sorted subarrays arr[left..mid] and arr[mid+1..right]
+fn putmyArr(arr[10]:int,left:int,right:int){
+    let i:int = left;
+    putch(40);
+    putint(left);
+    putch(39);
+
+    putint(right);
+    putch(41);
+    putch(10);
+
+    while (i <= right) {
+        putint(arr[i]);
+        putch(32);  // newline
+        i = i + 1;
+    }
+    putch(10); 
+}
+// Create temporary arrays to hold the two halves
+    let leftArr[65536]:int;
+    let rightArr[65536]:int;
+fn merge(arr[566]:int, left:int, mid:int, right:int) {
+    let n1:int = mid - left + 1;
+    let n2:int = right - mid;
+
+    
+
+    // Copy data to temporary arrays leftArr[] and rightArr[]
+    let i:int =0;
+    let j:int = 0;
+    while ( i < n1) {
+        let id:int = left + i;
+        leftArr[i] = arr[id];
+        i = i+1;
+    }
+
+    while (j < n2) {
+        let id:int = mid + 1 + j;
+        rightArr[j] = arr[id];
+        j=j+1;
+    }
+
+    // Merge the two halves back into the original array arr[]
+    i= 0; // Initial index of the first subarray
+    j = 0; // Initial index of the second subarray
+    let k:int = left; // Initial index of the merged subarray
+
+    while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) {
+            arr[k] = leftArr[i];
+            i=1+i;
+        } else {
+            arr[k] = rightArr[j];
+            j=j+1;
+        }
+        k=k+1;
+    }
+
+    // Copy the remaining elements of leftArr[], if there are any
+    while (i < n1) {
+        arr[k] = leftArr[i];
+        i=i+1;
+        k=k+1;
+    }
+
+    // Copy the remaining elements of rightArr[], if there are any
+    while (j < n2) {
+        arr[k] = rightArr[j];
+        j=j+1;
+        k=k+1;
+    }
+}
+
+// Main function to implement merge sort
+fn mergeSort( arr[65536]:int, left:int, right:int) {
+    if (left < right) {
+        // Same as (left+right)/2, but avoids overflow for large left and right
+        let mid:int = (right + left) / 2;
+
+        // Sort first and second halves
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+
+        // Merge the sorted halves
+        merge(arr, left, mid, right);
+    }
+}
+
+
+fn main()->int{
+    let arr[65536]: int;
+    let n: int = getint();  // Read the array length
+    let i: int = 0;
+
+    // Read array elements
+    while (i < n) {
+        arr[i] = getint();
+        i = i + 1;
+    }
+
+    // Perform merge sort
+    mergeSort(arr, 0, n - 1);
+
+    // Output the sorted array
+    putmyArr(arr,0,n-1);
+
+    ret 0;
+}

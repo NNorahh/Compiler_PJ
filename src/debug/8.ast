@@ -1,0 +1,180 @@
+A_program 
+	|--A_programElement 
+		|--A_fnDeclStmt 
+			|--A_fnDecl fn aa(
+				|--A_paramDecl 
+					|--A_varDecl 
+						|--A_varDeclScalar a:
+						|--A_type int)->
+			|--A_type int;
+
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDef 
+				|--A_varDefArray a[10]:
+				|--A_type int = {};
+
+	|--A_programElement 
+		|--A_structDef struct A {
+
+			|--A_varDecl 
+				|--A_varDeclScalar node:
+				|--A_type int
+}
+
+	|--A_programElement 
+		|--A_structDef struct B {
+
+			|--A_varDecl 
+				|--A_varDeclScalar node:
+				|--A_type A
+}
+
+	|--A_programElement 
+		|--A_structDef struct C {
+
+			|--A_varDecl 
+				|--A_varDeclScalar node:
+				|--A_type B
+}
+
+	|--A_programElement 
+		|--A_varDeclStmt let 
+			|--A_varDecl 
+				|--A_varDeclScalar kk:
+				|--A_type C;
+
+	|--A_programElement 
+		|--A_fnDef 
+			|--A_fnDecl fn b(
+				|--A_paramDecl )->
+			|--A_type int{
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar c:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_fnCall aa(
+												|--A_rightVal 
+													|--A_arithExpr 
+														|--A_exprUnit 
+															|--A_fnCall aa(
+															|--A_rightVal 
+																|--A_arithExpr 
+																	|--A_exprUnit 1)));
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar cc:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit c);
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar cc1:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_fnCall aa(
+												|--A_rightVal 
+													|--A_arithExpr 
+														|--A_exprUnit c));
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar cc2:
+						|--A_type int = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_fnCall aa(
+												|--A_rightVal 
+													|--A_arithExpr 
+														|--A_exprUnit 
+															|--A_fnCall aa(
+															|--A_rightVal 
+																|--A_arithExpr 
+																	|--A_exprUnit 1)));
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar bbb:
+						|--A_type B = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_memberExpr kk.node;
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefScalar aaa:
+						|--A_type A = 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_memberExpr bbb.node;
+
+			|--A_codeBlockStmt 
+				|--A_varDeclStmt let 
+					|--A_varDef 
+						|--A_varDefArray bb[10]:
+						|--A_type int = {
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit c), 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_fnCall aa(
+												|--A_rightVal 
+													|--A_arithExpr 
+														|--A_exprUnit c)), 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_memberExpr aaa.node, 
+						|--A_rightVal 
+							|--A_arithExpr 
+								|--A_exprUnit 
+									|--A_fnCall aa(
+									|--A_rightVal 
+										|--A_arithExpr 
+											|--A_exprUnit 
+												|--A_memberExpr aaa.node)};
+}
